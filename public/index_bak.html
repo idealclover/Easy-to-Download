@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>下载 <%= DATA.title %></title>
+</head>
+
+<body>
+  <section class="hero is-fullheight is-primary is-bold">
+    <!-- header -->
+    <header class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <img src="<%= DATA.logo %>" alt="Logo" />
+            </a>
+            <a class="navbar-item" href="/">
+              <span class="title is-6"><%= DATA.title %></span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- body -->
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="columns is-desktop is-centered">
+          <% var data = DATA.app %>
+          <% for (var i = 0; i < data.length; i++) { var item = data[i] %>
+          <div class="column is-centered">
+            <!-- card -->
+            <div class="card download-card" data-link="<%= item.downloadLink || ''%>" data-platform="<%= item.platform %>">
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-64x64">
+                      <img class="download-card--image" src="<%= item.icon %>"
+                        alt="Placeholder image" />
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-3"><%= item.platform %></p>
+                  </div>
+                  <% if (item.downloadLink) { %>
+                  <div class="media-right">
+                    <figure class="image is-24x24 is-hidden-tablet">
+                      <img src="./images/download.png" alt="Placeholder image" />
+                    </figure>
+                  </div>
+                  <% } %>
+                  <% if (item.qrcode) { %>
+                  <div class="media-right">
+                    <figure class="image is-96x96 is-hidden-mobile">
+                      <img src="<%= item.qrcode %>" class="insert-qrcode" alt="Placeholder image" />
+                    </figure>
+                  </div>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 微信弹层 -->
+  <section class="wechat-tips">
+    <!-- 内容为背景图 -->
+  </section>
+</body>
+
+</html>
