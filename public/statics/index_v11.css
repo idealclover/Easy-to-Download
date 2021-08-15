@@ -104,10 +104,10 @@ p {
 #mobile-social-box img {
   background: #fff;
   border-radius: 24px;
-  width: 36px;
-  height: 36px;
+  width:24;
+  height: 24px;
   padding: 6px;
-  margin-right: 36px;
+  margin-right: 12px;
 }
 
 .pc-display {

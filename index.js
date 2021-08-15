@@ -1,5 +1,5 @@
 import Qrcode from "qrcode";
-import * as $ from "./lib/zepto.js";
+import * as $ from "./lib/zepto.min.js";
 
 const $tips = $(".wechat-tips");
 // const $card = $(".download-card")

@@ -13,9 +13,9 @@
       name="description"
       content="<%= DATA.description %>"
     />
-    <link rel="stylesheet" href="statics/weui.css" />
-    <link rel="stylesheet" href="statics/animate.css" />
-    <link rel="stylesheet" href="statics/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/weui@2.4.4/dist/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@6.8.1/swiper-bundle.min.css" />
     <link rel="stylesheet" href="statics/index_v11.css" />
     <style>
       .web-download-android:hover {
@@ -26,8 +26,8 @@
         content: url("statics/iphone_hover.png");
       }
     </style>
-    <script src="statics/weui.js"></script>
-    <script src="statics/swiper-bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/weui.js@1.2.5/dist/weui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@6.8.1/swiper-bundle.min.js"></script>
   </head>
   <body
     data-uid="0"
@@ -51,12 +51,12 @@
               <span><%= DATA.title %></span>
             </span>
           </a>
-          <a
+          <!-- <a
             id="header-developer"
             href="https://developer.coolapk.com/?from=navbar"
           >
             <span style="font-size: 16px;">分享此应用</span>
-          </a>
+          </a> -->
         </div>
       </div>
       <div id="content">
@@ -143,7 +143,7 @@
                   </div>
                 </div>
               </div>
-              <div id="social-box">
+              <!-- <div id="social-box">
                 <a
                   class="weui-flex__item"
                   href="https://weibo.com/coolapk"
@@ -172,12 +172,12 @@
                       src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzVCMUQ3NEUzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzVCMUQ3NEYzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozNUIxRDc0QzNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozNUIxRDc0RDNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmHb/9kAAAPkSURBVHja7JxtaM1RHMfPsI0lM3lKhCYzsUmWvBE1ZTNPW0pReIEirL0hSYiy0LSmeINE7myxteSFh5CHeOHheixeeMjDkOLNSri+v/4/dV/s4b/7P+f33/nv/OpT9/7vvef+7+eec/7nd865Ny2RSCgXHUcfp8AJcoKcICfICbI2+nX24MKmpb1CQsuSC6kJEoiJoALMBVPAEPAXfANxcBk0gg89sgYZjMmgGiwAae08Poahxw+CGNgWhijpPohkbAUPQVkHctr7EleCl2B1lAVlcE3Yz7e7GwPBCVDrU6xVTawvaACLNJS1icvbGKUadECTnP+xAWyOiqBSUGlIeoHtgrLAEUN9BvVjR033R6YFUT8xzmD5s0C5rYLoG64SaMLbbRW0GIwUEDQdzLBR0DLBMdZy2wTR+KpEUFCJbYIKeeQrFfmc6FojaFoIOV6BTYLGhzBDkGuToBEhCBpmk6CsEAQNsjlZlYjfNgn6HIKgVpsEPQ1B0GObBF0VlvMd3LVJ0DvwQlDQJfDHtk76lKAgY+9lUhBNsP8SkPNMeetn1gmiq8pZAUF7QMJGQRR7TY1POO4rb7VE2SroNTc1E0G1pspk7ZEaSe8APw2UewzcNn3yEoK+gF2ay/yovLV6FQVBFLRc/EBjebRa8iNKgmgQt1ZTh30eNEkNsCSzeapBhwOW0aaElpzDEERRo7wNUqnGOSW8R0haEHWuXwO8/pb0FEEYE2bpAV77KeqCaAU0yPJMYVQFZYL1GpJKGk/RWnxGVAQV8JWL5odoq8rgLp7/SHn7Fztrnvs4haE0I8dGQbSIV8q1haZBt4DhPl9L2X/Mx/NoB+whvqKdVt424rSeLqg/WKe8+ZmLoDiF5LOe8ZuADgArwDXwipvfqJ4miLa47AbvOYHMT7EcmlN+y9xJ4fW53PyoObcob/tNepiCpoLj4A3YCYYGPJfkybVYgHJoB2wZpyMki7YdT5ISRO18flL/soavUDpytcak+w1KzyQ81W7auP4c3ODmmG5KEDWde8pbQSjW3ClSH5K82NjKx3ReOGZzh/4EFOkWNJP7iCJlJurbORYz9F554Dp/Ji2Csrn6Zxscbtz0eUxXZHEflaNDEG39H214PFbt85jOoP6pUocgic2Y9Mu9VUn36Xa5wPtW6BCUJ5T20LTsWKZW6D0ndPUEP7/2yRQ6WdoAdTLptlQSHVhQGw/pJWKO8GxGm44mFlfRjbgOQXURFlSnQxCNPmsiKIc+0xldI2manJoHmjkNsPE/dRJ87s38WXyt63fnN6tXmF4V7q8puspy3T9QuRrkBDlBTpATZG38E2AAnh2lG81eBQ0AAAAASUVORK5CYII="
                     />
                   </div>
-                  <!-- <div class="wx-qr-float">
+                  <div class="wx-qr-float">
                     <img
                       src="statics/image_003.png"
                       style="border-radius:10px;box-shadow: 0 0 10px #999;"
                     />
-                  </div> -->
+                  </div>
                 </span>
                 <a
                   class="weui-flex__item"
@@ -209,7 +209,7 @@
                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTg2RkU4N0QzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTg2RkU4N0UzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxODZGRTg3QjNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxODZGRTg3QzNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pu9h4Y0AAAQ2SURBVHja7JxZbExRGMdv0Uq19q3EWkqsDyX2h1qSqlhLrKEhQlTSVggvIqSWh4ZKiJJYEo0lEUsj4sGSUBSxRIgXWsUDYqu1VBn/L/NNMmlm7jlzl/bc6fmS38ucce69v957vu+ce0aMz+czdISPJlqBFqQFaUFakBbk2WgW6sPkou+NUkbFqkR9BzlyB1mMJLAJpIJqcB7sBTUuX0MCyObjvgWnwC3VBJGcu6B70GdpYDmYDp67JGcoKAG9gj7LAzvBOpUG6S115ARiACgDY1yQkw5u1JETiLVgvkqCppi0dQCXQaaDcpbxI9zS5DtLVRKUIGiP57Eh1+ZxYvhuPQRiBd/tqJKg+5LH2s1YOW4cOMKJQCbuqSRoK/gr+d1cvpviI+i/NbgAsiS//wMUqCToGlgSQUqn8egKj0+i6AZKwSTJvj+DyeCZalON4yCDT1AmRnO90leQxikLDpHssxyM4+zWYHVQOzADjOIUW1fyO9BWsq8UlnQ2zIA8D7SK4NwehkgE1VyH0V34yE1BLXiAzIlw/BAFZZsVDvU1RyKZbODH29FHjIrAO9y5k3LqO4aBS2Cjk4JoIL0KBkfJ/JMe3XxQ6JSgA4KB1KuRx5nXlqDhDk8RVItdoiQgEpRtRHe0B3PtZLGJkgei9PmAq+nWDXzRPj6HEZLlBmW+g1YFiSZ8VGMsClPHNHQ0BQvBPpAoKEYtP2KilJ6jqByD7+Ziw79uZDZP7GRH0DeTtjfgsAfGGarUSwR3mmVB/0zaPgjaVYonKkxWVY5YLUhcPSsniOZvtDD2hWfTNGD2d6DfsZwYKsFtsNKOADeWO2QimU8+UCZQtdoHzATjDevLoQtYdGBg7QlGsrQsroEcDbfuoO1haqhEnttZCXqDsT9M1lkMprpxIW4JmmDSlmqEfocm06fZvCnTS4LiBO1tLPTZ1WbVr7OYFqQFNR5Bv13o84/E5NQzgh6btNWC1xb6rBC0v/KSoCKTtmOgykKf18FLk/aTXhJ0GqznuyU4aNnB6jJuLReEoeTuADe9NNWgKOC/Kr0KpldHZYb9HRf0dnSg4d8fRJuzPvIxyrw2FwsEjTUnHO6TFuq26TSv6yAtSAtqDNdpR1AXDwlKaghBlLoHeUAOLcemuSVI9FqHdrTHKi6INmf1MGn/ZUfQJ0F7OlfHKQqKaQ7WgD2C71XZKRSfGv7FdrPIYF5ICK2voMX7fobc/sZyO4Jou9o0yZPqzXgtLtp5xGjm/TWK038NX6OtMSg/igXR+FRpN80X8qMWbUG7doW/+5ARREuZtHH8XBTJKeWx9adThSLtJJsNVhv+bS9eDfq18mbD/xLyvcw/iGQ9iIpG2s52FMwy/L+16MwVdYLCUmjzBC3V0orjGUP+tyQRCwr+KxQzUR8x+r/H0csdWpAWpAVpQVqQFqQF6QgV/wUYANo6tEn5dRIqAAAAAElFTkSuQmCC"
                   />
                 </a>
-              </div>
+              </div> -->
             </div>
             <div class="weui-flex image-group">
               <div class="weui-flex__item large-image-box">
@@ -273,7 +273,7 @@
                 </div>
               </div>
             </div>
-            <div class="weui-flex mobile-social-group">
+            <!-- <div class="weui-flex mobile-social-group">
               <div id="mobile-social-box">
                 <a
                   class="weui-flex__item"
@@ -303,12 +303,12 @@
                       src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzVCMUQ3NEUzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzVCMUQ3NEYzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozNUIxRDc0QzNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozNUIxRDc0RDNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmHb/9kAAAPkSURBVHja7JxtaM1RHMfPsI0lM3lKhCYzsUmWvBE1ZTNPW0pReIEirL0hSYiy0LSmeINE7myxteSFh5CHeOHheixeeMjDkOLNSri+v/4/dV/s4b/7P+f33/nv/OpT9/7vvef+7+eec/7nd865Ny2RSCgXHUcfp8AJcoKcICfICbI2+nX24MKmpb1CQsuSC6kJEoiJoALMBVPAEPAXfANxcBk0gg89sgYZjMmgGiwAae08Poahxw+CGNgWhijpPohkbAUPQVkHctr7EleCl2B1lAVlcE3Yz7e7GwPBCVDrU6xVTawvaACLNJS1icvbGKUadECTnP+xAWyOiqBSUGlIeoHtgrLAEUN9BvVjR033R6YFUT8xzmD5s0C5rYLoG64SaMLbbRW0GIwUEDQdzLBR0DLBMdZy2wTR+KpEUFCJbYIKeeQrFfmc6FojaFoIOV6BTYLGhzBDkGuToBEhCBpmk6CsEAQNsjlZlYjfNgn6HIKgVpsEPQ1B0GObBF0VlvMd3LVJ0DvwQlDQJfDHtk76lKAgY+9lUhBNsP8SkPNMeetn1gmiq8pZAUF7QMJGQRR7TY1POO4rb7VE2SroNTc1E0G1pspk7ZEaSe8APw2UewzcNn3yEoK+gF2ay/yovLV6FQVBFLRc/EBjebRa8iNKgmgQt1ZTh30eNEkNsCSzeapBhwOW0aaElpzDEERRo7wNUqnGOSW8R0haEHWuXwO8/pb0FEEYE2bpAV77KeqCaAU0yPJMYVQFZYL1GpJKGk/RWnxGVAQV8JWL5odoq8rgLp7/SHn7Fztrnvs4haE0I8dGQbSIV8q1haZBt4DhPl9L2X/Mx/NoB+whvqKdVt424rSeLqg/WKe8+ZmLoDiF5LOe8ZuADgArwDXwipvfqJ4miLa47AbvOYHMT7EcmlN+y9xJ4fW53PyoObcob/tNepiCpoLj4A3YCYYGPJfkybVYgHJoB2wZpyMki7YdT5ISRO18flL/soavUDpytcak+w1KzyQ81W7auP4c3ODmmG5KEDWde8pbQSjW3ClSH5K82NjKx3ReOGZzh/4EFOkWNJP7iCJlJurbORYz9F554Dp/Ji2Csrn6Zxscbtz0eUxXZHEflaNDEG39H214PFbt85jOoP6pUocgic2Y9Mu9VUn36Xa5wPtW6BCUJ5T20LTsWKZW6D0ndPUEP7/2yRQ6WdoAdTLptlQSHVhQGw/pJWKO8GxGm44mFlfRjbgOQXURFlSnQxCNPmsiKIc+0xldI2manJoHmjkNsPE/dRJ87s38WXyt63fnN6tXmF4V7q8puspy3T9QuRrkBDlBTpATZG38E2AAnh2lG81eBQ0AAAAASUVORK5CYII="
                     />
                   </div>
-                  <!-- <div class="wx-qr-float">
+                  <div class="wx-qr-float">
                     <img
                       src="statics/image_003.png"
                       style="border-radius:10px;box-shadow: 0 0 10px #999;"
                     />
-                  </div> -->
+                  </div>
                 </span>
                 <a
                   class="weui-flex__item"
@@ -341,7 +341,7 @@
                   />
                 </a>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
