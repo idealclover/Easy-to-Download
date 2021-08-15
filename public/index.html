@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta
       name="description"
-      content="玩数码，上酷安！酷安，真实有趣的数码社区。快来下载酷安APP体验吧。"
+      content="<%= DATA.description %>"
     />
     <link rel="stylesheet" href="statics/weui.css" />
     <link rel="stylesheet" href="statics/animate.css" />
@@ -76,10 +76,10 @@
                 <div class="weui-flex__item">
                   <p class="title"><%= DATA.title %></p>
                   <p class="sub-title mobile-display">
-                    <%= DATA.description %>
+                    <%= DATA.detail %>
                   </p>
                   <p class="sub-title pc-display">
-                    <%= DATA.description %>
+                    <%= DATA.detail %>
                   </p>
                 </div>
               </div>
@@ -133,7 +133,10 @@
                 <div class="weui-flex__item">
                   <div class="mobile-download-button-box">
                     <a
-                      href="https://dl.coolapk.com/down?pn=com.coolapk.market&amp;id=NDU5OQ&amp;h=46bb9d98&amp;from=from-web"
+                      href="",
+                      class="download-link"
+                      data-ios="<%= DATA.iOS %>"
+                      data-android="<%= DATA.Android %>"
                     >
                       <img src="statics/download_now.png" alt="立即下载" />
                     </a>
@@ -169,12 +172,12 @@
                       src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzVCMUQ3NEUzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzVCMUQ3NEYzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozNUIxRDc0QzNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozNUIxRDc0RDNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmHb/9kAAAPkSURBVHja7JxtaM1RHMfPsI0lM3lKhCYzsUmWvBE1ZTNPW0pReIEirL0hSYiy0LSmeINE7myxteSFh5CHeOHheixeeMjDkOLNSri+v/4/dV/s4b/7P+f33/nv/OpT9/7vvef+7+eec/7nd865Ny2RSCgXHUcfp8AJcoKcICfICbI2+nX24MKmpb1CQsuSC6kJEoiJoALMBVPAEPAXfANxcBk0gg89sgYZjMmgGiwAae08Poahxw+CGNgWhijpPohkbAUPQVkHctr7EleCl2B1lAVlcE3Yz7e7GwPBCVDrU6xVTawvaACLNJS1icvbGKUadECTnP+xAWyOiqBSUGlIeoHtgrLAEUN9BvVjR033R6YFUT8xzmD5s0C5rYLoG64SaMLbbRW0GIwUEDQdzLBR0DLBMdZy2wTR+KpEUFCJbYIKeeQrFfmc6FojaFoIOV6BTYLGhzBDkGuToBEhCBpmk6CsEAQNsjlZlYjfNgn6HIKgVpsEPQ1B0GObBF0VlvMd3LVJ0DvwQlDQJfDHtk76lKAgY+9lUhBNsP8SkPNMeetn1gmiq8pZAUF7QMJGQRR7TY1POO4rb7VE2SroNTc1E0G1pspk7ZEaSe8APw2UewzcNn3yEoK+gF2ay/yovLV6FQVBFLRc/EBjebRa8iNKgmgQt1ZTh30eNEkNsCSzeapBhwOW0aaElpzDEERRo7wNUqnGOSW8R0haEHWuXwO8/pb0FEEYE2bpAV77KeqCaAU0yPJMYVQFZYL1GpJKGk/RWnxGVAQV8JWL5odoq8rgLp7/SHn7Fztrnvs4haE0I8dGQbSIV8q1haZBt4DhPl9L2X/Mx/NoB+whvqKdVt424rSeLqg/WKe8+ZmLoDiF5LOe8ZuADgArwDXwipvfqJ4miLa47AbvOYHMT7EcmlN+y9xJ4fW53PyoObcob/tNepiCpoLj4A3YCYYGPJfkybVYgHJoB2wZpyMki7YdT5ISRO18flL/soavUDpytcak+w1KzyQ81W7auP4c3ODmmG5KEDWde8pbQSjW3ClSH5K82NjKx3ReOGZzh/4EFOkWNJP7iCJlJurbORYz9F554Dp/Ji2Csrn6Zxscbtz0eUxXZHEflaNDEG39H214PFbt85jOoP6pUocgic2Y9Mu9VUn36Xa5wPtW6BCUJ5T20LTsWKZW6D0ndPUEP7/2yRQ6WdoAdTLptlQSHVhQGw/pJWKO8GxGm44mFlfRjbgOQXURFlSnQxCNPmsiKIc+0xldI2manJoHmjkNsPE/dRJ87s38WXyt63fnN6tXmF4V7q8puspy3T9QuRrkBDlBTpATZG38E2AAnh2lG81eBQ0AAAAASUVORK5CYII="
                     />
                   </div>
-                  <div class="wx-qr-float">
+                  <!-- <div class="wx-qr-float">
                     <img
                       src="statics/image_003.png"
                       style="border-radius:10px;box-shadow: 0 0 10px #999;"
                     />
-                  </div>
+                  </div> -->
                 </span>
                 <a
                   class="weui-flex__item"
@@ -194,16 +197,6 @@
                 >
                   <img
                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzVCMUQ3NDYzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzVCMUQ3NDczRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxODZGRTg3RjNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxODZGRTg4MDNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Proa71cAAAOPSURBVHja7JtbiE1RGMfXcAxyH5TGtXlxJ5eEchv38KTklgwx8eCacnmREJKGMDHy4JIHl5qamAeDFEUeGOOuKWFELuWBGTHH/2t/DxpzdmudvfbZ65zz/etX5+E7e+/1b92+b6+dE4/HlSixWogFYpAYJAaJQe4qphN0YVNmNn7RIelBGTvEjoO4BvNkDvJXNzHIX8PEIH9NF4P8NRgMEYP8tU4M8tdS0E8MSqy24KgY5K85YLMY5K/9YJUYlFgtwQlAGVYbMah55YCN4C4YJwYl1gg26Qavcl2SvVBMZbamMI3gFXgBvoHlYtD/I6U/o0wMknqQGCQGiUE++h32DdJ9kt7LG8QtIDedDeqovOpfPsjjRtFyWw1qAlz3J9gHysBOsNi2UWEaNBosATN5eW1uOJeCtRbu9QYUge1gBRs1yFWDpoJdYHwEQ+4D2MMUgEIwRnmVx77KK/K3jsqgntzVZxv8p12IZtUyp1zoQVSPOZtEzuP8ImFjmS8G5UESQpcVs2BOKZcZZKPYRJPBsUw2J4hBNJzO8H5GUo1mdAD0zoZcLJk5aCBvxkz1GlSAZ6AOdE5FLhWFQesNe959sANUKe/ISkb3IHpJt9Ag/iDYlg49xZZBs0AnzdgSzrKzapIu1Ix7CbZm4yo20qD3NGSjQQWaceUpev4OrhmUpxHznZfxdMklrd4gV9OgoNKtCta7ZpBO47tbSIJ7aMZ9ds0gnaFDFbtRAbceYzVja10zqFozrijAM1HxratmbI1rBt3TjKNcLZnTpzT37NaMpcMIb10zqFIzrhW4xPORiUoMjK1UKZCpQU/BQ81YetVzW7PBdCKMiutrDJ7lnKv7iDKD2AHgAQ+b/ATJ7zLwGKw0uO4drhKErhydr56bfC9GjXoO+hjeiw4xPVFeXYh+02ui4Xw9U1FOeDNo43W+F0tmv0Kve+kc4OUkeutQJogqbJgT9lb9CjgfQe5I7/OLXU5W/9Vq8CiFz/pHeQcy69LFoB9grvIORqZCNBNedb3c0VTvwCReqcISTegbwJEIhrSVcsFHMAGcDOH5vnIvPawikq16Sj1PntN4M2lDtBDQoatrKkLZLjhV8TK+gHfRjYb/b+DVkbL5+eC9ilixkOaMi0wvMANMVN4hJnobS2eC2oNf4BPPY5S+3ALXwRflkMI+n0ONP82kpeSctI1cLJslPUgMEoPEIDHIYf0VYADIQJpMvSWi1gAAAABJRU5ErkJggg=="
-                  />
-                </a>
-                <a
-                  class="weui-flex__item"
-                  href="https://www.toutiao.com/c/user/105585125568/"
-                  target="_blank"
-                  title="头条主页：酷安机佬"
-                >
-                  <img
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUUwNTlBRTkzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUUwNTlBRUEzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozNUIxRDc1MDNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBRTA1OUFFODNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pu4c/BEAAAeFSURBVHja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"
                   />
                 </a>
                 <a
@@ -310,12 +303,12 @@
                       src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzVCMUQ3NEUzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzVCMUQ3NEYzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozNUIxRDc0QzNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozNUIxRDc0RDNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmHb/9kAAAPkSURBVHja7JxtaM1RHMfPsI0lM3lKhCYzsUmWvBE1ZTNPW0pReIEirL0hSYiy0LSmeINE7myxteSFh5CHeOHheixeeMjDkOLNSri+v/4/dV/s4b/7P+f33/nv/OpT9/7vvef+7+eec/7nd865Ny2RSCgXHUcfp8AJcoKcICfICbI2+nX24MKmpb1CQsuSC6kJEoiJoALMBVPAEPAXfANxcBk0gg89sgYZjMmgGiwAae08Poahxw+CGNgWhijpPohkbAUPQVkHctr7EleCl2B1lAVlcE3Yz7e7GwPBCVDrU6xVTawvaACLNJS1icvbGKUadECTnP+xAWyOiqBSUGlIeoHtgrLAEUN9BvVjR033R6YFUT8xzmD5s0C5rYLoG64SaMLbbRW0GIwUEDQdzLBR0DLBMdZy2wTR+KpEUFCJbYIKeeQrFfmc6FojaFoIOV6BTYLGhzBDkGuToBEhCBpmk6CsEAQNsjlZlYjfNgn6HIKgVpsEPQ1B0GObBF0VlvMd3LVJ0DvwQlDQJfDHtk76lKAgY+9lUhBNsP8SkPNMeetn1gmiq8pZAUF7QMJGQRR7TY1POO4rb7VE2SroNTc1E0G1pspk7ZEaSe8APw2UewzcNn3yEoK+gF2ay/yovLV6FQVBFLRc/EBjebRa8iNKgmgQt1ZTh30eNEkNsCSzeapBhwOW0aaElpzDEERRo7wNUqnGOSW8R0haEHWuXwO8/pb0FEEYE2bpAV77KeqCaAU0yPJMYVQFZYL1GpJKGk/RWnxGVAQV8JWL5odoq8rgLp7/SHn7Fztrnvs4haE0I8dGQbSIV8q1haZBt4DhPl9L2X/Mx/NoB+whvqKdVt424rSeLqg/WKe8+ZmLoDiF5LOe8ZuADgArwDXwipvfqJ4miLa47AbvOYHMT7EcmlN+y9xJ4fW53PyoObcob/tNepiCpoLj4A3YCYYGPJfkybVYgHJoB2wZpyMki7YdT5ISRO18flL/soavUDpytcak+w1KzyQ81W7auP4c3ODmmG5KEDWde8pbQSjW3ClSH5K82NjKx3ReOGZzh/4EFOkWNJP7iCJlJurbORYz9F554Dp/Ji2Csrn6Zxscbtz0eUxXZHEflaNDEG39H214PFbt85jOoP6pUocgic2Y9Mu9VUn36Xa5wPtW6BCUJ5T20LTsWKZW6D0ndPUEP7/2yRQ6WdoAdTLptlQSHVhQGw/pJWKO8GxGm44mFlfRjbgOQXURFlSnQxCNPmsiKIc+0xldI2manJoHmjkNsPE/dRJ87s38WXyt63fnN6tXmF4V7q8puspy3T9QuRrkBDlBTpATZG38E2AAnh2lG81eBQ0AAAAASUVORK5CYII="
                     />
                   </div>
-                  <div class="wx-qr-float">
+                  <!-- <div class="wx-qr-float">
                     <img
                       src="statics/image_003.png"
                       style="border-radius:10px;box-shadow: 0 0 10px #999;"
                     />
-                  </div>
+                  </div> -->
                 </span>
                 <a
                   class="weui-flex__item"
@@ -339,16 +332,6 @@
                 </a>
                 <a
                   class="weui-flex__item"
-                  href="https://www.toutiao.com/c/user/105585125568/"
-                  target="_blank"
-                  title="头条主页：酷安机佬"
-                >
-                  <img
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUUwNTlBRTkzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUUwNTlBRUEzRTRBMTFFOUE2RkE5MjFGRjc2RTY1N0IiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozNUIxRDc1MDNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBRTA1OUFFODNFNEExMUU5QTZGQTkyMUZGNzZFNjU3QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pu4c/BEAAAeFSURBVHja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"
-                  />
-                </a>
-                <a
-                  class="weui-flex__item"
                   href="http://space.bilibili.com/386137684"
                   target="_blank"
                   title="B站主页：酷安数码"
@@ -367,6 +350,9 @@
         <img src="statics/iphone_hover.png" alt="立即下载" />
       </div>
     </div>
+    <section class="wechat-tips">
+      <!-- 内容为背景图 -->
+    </section>
     <script>
       var mySwiper = new Swiper(".swiper-container", {
         direction: "horizontal", // 垂直切换选项
