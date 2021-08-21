@@ -47,7 +47,7 @@ function generateQrcode(text) {
 }
 
 function init() {
-  if (isWechat || ($.os.ios && isDingTalk)) {
+  if (($.os.android && isWechat) || ($.os.ios && isDingTalk)) {
     return $tips.show();
   }
 

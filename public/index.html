@@ -36,8 +36,6 @@
         content: url("https://image.idealclover.cn/projects/Easy-to-Download/iphone_hover.png");
       }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/weui.js@1.2.5/dist/weui.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@6.8.1/swiper-bundle.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
@@ -74,12 +72,9 @@
               <span><%= DATA.title %></span>
             </span>
           </a>
-          <!-- <a
-            id="header-developer"
-            href="https://developer.coolapk.com/?from=navbar"
-          >
+          <a id="header-developer" class="share">
             <span style="font-size: 16px;">分享此应用</span>
-          </a> -->
+          </a>
         </div>
       </div>
       <div id="content">
@@ -157,7 +152,6 @@
                   <div class="mobile-download-button-box">
                     <a
                       href=""
-                      ,
                       class="download-link"
                       data-ios="<%= DATA.iOS %>"
                       data-android="<%= DATA.Android %>"
@@ -167,6 +161,9 @@
                         alt="立即下载"
                       />
                     </a>
+                    <button style="background: transparent;border: 0;" class="share">
+                      <span style="font-size: 16px;color:#888;">分享此应用</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -377,7 +374,21 @@
     <section class="wechat-tips">
       <!-- 内容为背景图 -->
     </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/weui.js@1.2.5/dist/weui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@6.8.1/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
     <script>
+      var clipboard = new ClipboardJS(".share", {
+        text: function() {
+          return "<%= DATA.share %>";
+        },
+      });
+
+      clipboard.on("success", function(e) {
+        weui.toast("链接已复制，快分享给小伙伴吧！", 3000);
+      });
+
       var mySwiper = new Swiper(".swiper-container", {
         direction: "horizontal", // 垂直切换选项
         loop: true, // 循环模式选项

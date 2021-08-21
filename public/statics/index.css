@@ -347,8 +347,8 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #888;
-  opacity: 0.6;
+  background-color: #fff;
+  opacity: 0.9;
   z-index: 100;
   height: 100vh;
   width: 100vw;
@@ -357,6 +357,10 @@ p {
   background-repeat: no-repeat;
   background-position: center 20px;
   display: none;
+}
+
+.weui-toast__content {
+  color: #fff;
 }
 
 /* PC端样式 */
