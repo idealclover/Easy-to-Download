@@ -251,7 +251,16 @@ p {
 }
 
 #footer {
-  padding: 40px;
+  /* margin-top: 40px; */
+  padding: 12px;
+  text-align: center;
+  backdrop-filter: blur(20px);
+  color: #fff;
+}
+
+#footer a{
+  color: #fff;
+  text-decoration: underline;
 }
 
 #footer .footer-navbar a {
@@ -418,7 +427,6 @@ p {
     justify-content: space-between;
     align-items: center;
     margin: 0;
-    padding-bottom: 40px;
   }
 
   #main-content:after {
