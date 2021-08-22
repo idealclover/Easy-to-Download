@@ -14,6 +14,8 @@ Based on [CoolAPK](https://coolapk.com/) and [FEMessage/app-download](https://gi
 
 ![Mobile](https://i.loli.net/2021/08/22/FUhk2qN5CmjvLPz.png)
 
+<a href="https://sm.ms/image/XWdeLr6D4tR5bCE" target="_blank"><img src="https://i.loli.net/2021/08/22/XWdeLr6D4tR5bCE.png" width="250"></a>
+
 - json 文件轻松配置 三分钟搭建新的 APP 下载页
 - 移动端支持直接下载对应系统，iOS 系统自动唤起应用商店
 - QQ/微信浏览器引导跳转
