@@ -6,6 +6,8 @@
 
 Based on [CoolAPK](https://coolapk.com/) and [FEMessage/app-download](https://github.com/FEMessage/app-download).
 
+**[预览链接 & 南哪课表官网](https://app.nju.today/)**
+
 - PC 端显示效果
 
 ![PC](https://i.loli.net/2021/08/22/XWdeLr6D4tR5bCE.png)
