@@ -8,11 +8,11 @@ Based on [CoolAPK](https://coolapk.com/) and [FEMessage/app-download](https://gi
 
 - PC 端显示效果
 
-![PC](https://i.loli.net/2021/08/22/3OlD6UhcHSrKWvB.png)
+![PC](https://i.loli.net/2021/08/22/XWdeLr6D4tR5bCE.png)
 
 - 移动端显示效果
 
-![Mobile](https://i.loli.net/2021/08/22/rHz65nRt3M92JKA.png)
+![Mobile](https://i.loli.net/2021/08/22/FUhk2qN5CmjvLPz.png)
 
 - json 文件轻松配置 三分钟搭建新的 APP 下载页
 - 移动端支持直接下载对应系统，iOS 系统自动唤起应用商店
