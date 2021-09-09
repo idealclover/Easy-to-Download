@@ -46,15 +46,7 @@ function generateQrcode(text) {
   });
 }
 
-window.onload = function() {
-  if (($.os.android && isWechat) || ($.os.ios && isDingTalk)) {
-    return $tips.show();
-  }
-
-  const downloadLinks = getData($link);
-  const link = getNowLink(downloadLinks);
-  downloadApp(link);
-
+$(document).ready(function() {
   if (!$.os.phone) {
     generateQrcode(location.href)
       .then((url) => {
@@ -64,4 +56,14 @@ window.onload = function() {
       })
       .catch(console.error);
   }
+})
+
+window.onload = function() {
+  if (($.os.android && isWechat) || ($.os.ios && isDingTalk)) {
+    return $tips.show();
+  }
+
+  const downloadLinks = getData($link);
+  const link = getNowLink(downloadLinks);
+  downloadApp(link);
 };
