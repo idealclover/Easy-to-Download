@@ -46,7 +46,7 @@ function generateQrcode(text) {
   });
 }
 
-function init() {
+window.onload = function() {
   if (($.os.android && isWechat) || ($.os.ios && isDingTalk)) {
     return $tips.show();
   }
@@ -64,6 +64,4 @@ function init() {
       })
       .catch(console.error);
   }
-}
-
-init();
+};
