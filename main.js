@@ -2,10 +2,12 @@ import "./style.css";
 
 import Qrcode from "qrcode";
 import Clipboard from "clipboard";
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 
-const $tip = document.getElementById("wechat-tips");
-const $link = document.getElementById("download-link");
-const $qrcode = document.getElementById("qrcode");
+const lintip = document.getElementById("wechat-tips");
+const linlink = document.getElementById("download-link");
+const linqrcode = document.getElementById("qrcode");
 const ua = navigator.userAgent;
 const isWechat = /micromessenger/i.test(ua);
 const isDingTalk = /DingTalk/i.test(ua);
@@ -97,8 +99,22 @@ function detect(ua, platform) {
 const os = detect(navigator.userAgent, navigator.platform);
 // console.log(os);
 
+const swiper = new Swiper(".swiper-container", {
+  observer: true,
+  observeParents: true,
+  direction: "horizontal", // 垂直切换选项
+  loop: true, // 循环模式选项
+  autoplay: {
+    delay: 4000, //1秒切换一次
+  },
+  // 如果需要分页器
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
+
 // 剪贴板实现
-var clipboard = new Clipboard(".share", {
+const clipboard = new Clipboard(".share", {
   text: function () {
     return import.meta.env.VITE_SHARE;
   },
@@ -116,23 +132,25 @@ function getNowLink() {
     : "";
 }
 
-$link.setAttribute("href", getNowLink());
+linlink.setAttribute("href", getNowLink());
 
 window.onload = function () {
   // 生成二维码
   if (!os.phone) {
     Qrcode.toDataURL(location.href, { errorCorrectionLevel: "L" })
-      .then((url) => $qrcode.setAttribute("src", url))
+      .then((url) => linqrcode.setAttribute("src", url))
       .catch(console.error);
   }
 
   // 微信弹窗
   if ((os.android && isWechat) || (os.ios && isDingTalk)) {
-    return $tip.show();
+    return lintip.show();
   }
 
   // iOS直接调起商店
   if (os.ios) {
     location.assign(getNowLink());
   }
+
+  swiper.update();
 };
