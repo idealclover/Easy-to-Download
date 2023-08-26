@@ -10,5 +10,9 @@
   },
   "devDependencies": {
     "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "clipboard": "^2.0.11",
+    "qrcode": "^1.5.3"
   }
 }

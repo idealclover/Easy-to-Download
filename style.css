@@ -3,6 +3,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+body {
+  margin: 0;
+}
+
 a {
   color: #333333;
 }
@@ -670,5 +674,42 @@ p {
     display: flex;
     align-items: center;
     text-align: center;
+  }
+
+  .web-download-android:hover {
+    content: url("https://image.idealclover.cn/projects/Easy-to-Download/android_hover.png");
+  }
+
+  .web-download-iphone:hover {
+    content: url("https://image.idealclover.cn/projects/Easy-to-Download/iphone_hover.png");
+  }
+}
+
+
+/* github banner*/
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
   }
 }
