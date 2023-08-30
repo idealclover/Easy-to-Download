@@ -5,6 +5,14 @@ body::-webkit-scrollbar {
 
 body {
   margin: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
 }
 
 a {
@@ -537,7 +545,8 @@ p {
     display: none;
   }
 
-  #first_screen .image-group {
+ .image-group {
+    display: flex;
   }
 
   .large-image {
