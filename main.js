@@ -32,11 +32,9 @@ const swiper = new Swiper(".swiper-container", {
 
 // 手机下载链接获取
 function getNowLink() {
-  return os.isAndroid
-    ? import.meta.env.VITE_ANDROID
-    : os.isIOS
+  return os.isiOS
     ? import.meta.env.VITE_IOS
-    : "";
+    : import.meta.env.VITE_ANDROID;
 }
 
 const link = document.getElementById("download-link");
