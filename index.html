@@ -18,10 +18,10 @@
     </style>
   </head>
   <body>
-    <div id="main">
+    <div id="main" style="background-image: url(%VITE_BACKGROUND%)">
       <div id="header" style="padding: 20px 0" googl="true">
         <div class="main" style="width: 1000px">
-          <a href="/">
+          <a href="/" style="text-decoration: none">
             <span
               id="header-logo"
               style="display: flex; justify-content: left; align-items: center"
@@ -34,8 +34,10 @@
               <span>%VITE_TITLE%</span>
             </span>
           </a>
-          <a id="header-developer" class="share">
-            <span style="font-size: 16px">分享此应用</span>
+          <a id="header-developer" href="#" class="share" style="text-decoration: none">
+            <span style="font-size: 16px">
+              分享此应用
+            </span>
           </a>
         </div>
       </div>
@@ -61,7 +63,7 @@
                     <img src="" id="qrcode" alt="扫码下载APP" />
                   </figure>
                   <p style="font-size: 13px; align-self: center">
-                    手机扫码下载App
+                    手机扫码下载APP
                   </p>
                 </div>
 
@@ -236,7 +238,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-RP7NWBCL10"
+      src="https://www.googletagmanager.com/gtag/js?id=%VITE_GCODE%"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -244,7 +246,7 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "G-RP7NWBCL10");
+      gtag("config", "%VITE_GCODE%");
     </script>
   </body>
 </html>

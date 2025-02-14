@@ -47,7 +47,7 @@ const clipboard = new Clipboard(".share", {
   },
 });
 clipboard.on("success", function (e) {
-  weui.toast("链接已复制，快分享给小伙伴吧！", 3000);
+  // weui.toast("链接已复制，快分享给小伙伴吧！", 3000);
 });
 
 window.onload = function () {
