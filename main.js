@@ -32,9 +32,7 @@ const swiper = new Swiper(".swiper-container", {
 
 // 手机下载链接获取
 function getNowLink() {
-  return os.isiOS
-    ? import.meta.env.VITE_IOS
-    : import.meta.env.VITE_ANDROID;
+  return os.isiOS ? import.meta.env.VITE_IOS : import.meta.env.VITE_ANDROID;
 }
 
 const link = document.getElementById("download-link");
@@ -47,7 +45,12 @@ const clipboard = new Clipboard(".share", {
   },
 });
 clipboard.on("success", function (e) {
-  // weui.toast("链接已复制，快分享给小伙伴吧！", 3000);
+  document.getElementsByClassName("shareText")[0].innerText = "✅ 已复制到剪贴板";
+  document.getElementsByClassName("shareText")[1].innerText = "✅ 已复制到剪贴板";
+  setTimeout(() => {
+    document.getElementsByClassName("shareText")[0].innerText = "分享此应用";
+    document.getElementsByClassName("shareText")[1].innerText = "分享此应用";
+  }, 3000);
 });
 
 window.onload = function () {
