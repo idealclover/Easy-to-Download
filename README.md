@@ -36,20 +36,21 @@ yarn build
 
 ## 页面信息配置
 
-修改 config.json 即可配置页面信息，修改后重新执行 yarn dev 即可看到效果。
+修改 .env 即可配置页面信息，修改后重新执行 yarn dev 即可看到效果。
 
 当然，您也可以对页面 HTML 进行拓展，页面使用 [EJS 模版](https://ejs.bootcss.com/)。
 
-```javascript
-{
-  "title":"南哪课表", // 显示在头部的标题
-  "description": "南大人的专属课表", // 网站 discription
-  "detail": "南大人的专属课表<br />一键登陆教务系统导入课程", // 展示在网站的详细介绍
-  "logo": "https://image.idealclover.cn/projects/WheretoSleepinNJU/icon.png", // 显示在头部的 app logo
-  "iOS": "https://apps.apple.com/cn/app/id1511705694", // iOS 下载链接
-  "Android": "https://www.coolapk.com/apk/218862", // 安卓下载链接
-  "share": "南哪课表-南大人的专属课表，快来一起使用吧！https://app.idealclover.cn" // 分享后剪贴板的文字
-}
+```
+VITE_TITLE="南哪课表"
+VITE_DESC="南大同学的专属课表"
+VITE_DETAIL="南大同学的专属课表<br />一键登陆教务系统导入课程"
+VITE_LOGO="https://image.idealclover.cn/projects/WheretoSleepinNJU/icon.png"
+VITE_BACKGROUND="https://image.idealclover.cn/projects/Life-in-NJU/background/bg5.jpg"
+VITE_IOS="https://apps.apple.com/cn/app/id1511705694"
+VITE_ANDROID="https://mirror.nju.edu.cn/download/%E5%8D%97%E5%93%AA%E8%AF%BE%E8%A1%A8"
+VITE_GITHUB="https://github.com/idealclover/Easy-to-Download"
+VITE_SHARE="南哪课表-南大同学的专属课表APP https://nju.app"
+VITE_GCODE="G-RP7NWBCL10"
 ```
 
 ## License

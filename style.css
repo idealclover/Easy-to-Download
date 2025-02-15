@@ -3,6 +3,18 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+body {
+  margin: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
 a {
   color: #333333;
 }
@@ -29,7 +41,6 @@ p {
 }
 
 #main {
-  background-image: url("https://image.idealclover.cn/projects/Life-in-NJU/background/bg5.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -186,7 +197,7 @@ p {
 }
 
 #mobile-download-box {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 #mobile-social-box {
@@ -343,6 +354,10 @@ p {
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
   bottom: 0;
+}
+
+.swiper-pagination {
+  position: static!important;
 }
 
 .swiper-container {
@@ -529,7 +544,8 @@ p {
     display: none;
   }
 
-  #first_screen .image-group {
+ .image-group {
+    display: flex;
   }
 
   .large-image {
@@ -670,5 +686,42 @@ p {
     display: flex;
     align-items: center;
     text-align: center;
+  }
+
+  .web-download-android:hover {
+    content: url("https://image.idealclover.cn/projects/Easy-to-Download/android_hover.png");
+  }
+
+  .web-download-iphone:hover {
+    content: url("https://image.idealclover.cn/projects/Easy-to-Download/iphone_hover.png");
+  }
+}
+
+
+/* github banner*/
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
   }
 }
