@@ -9,10 +9,12 @@ var os = {};
 const ua = navigator.userAgent;
 os.isAndroid = /android/i.test(ua);
 os.isiOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+os.isHarmony = /HarmonyOS|OpenHarmony/i.test(ua);
 os.isWechat = /micromessenger/i.test(ua);
 os.isDingTalk = /DingTalk/i.test(ua);
 // console.log(os.isAndroid);
 // console.log(os.isiOS);
+// console.log(os.isHarmony);
 // console.log(os.isWechat);
 // console.log(os.isDingTalk);
 
@@ -32,7 +34,9 @@ const swiper = new Swiper(".swiper-container", {
 
 // 手机下载链接获取
 function getNowLink() {
-  return os.isiOS ? import.meta.env.VITE_IOS : import.meta.env.VITE_ANDROID;
+  if (os.isiOS) return import.meta.env.VITE_IOS;
+  if (os.isHarmony) return import.meta.env.VITE_HARMONY;
+  return import.meta.env.VITE_ANDROID;
 }
 
 const link = document.getElementById("download-link");
@@ -55,7 +59,7 @@ clipboard.on("success", function (e) {
 
 window.onload = function () {
   // 生成二维码
-  if (!os.isAndroid && !os.isIOS) {
+  if (!os.isAndroid && !os.isIOS && !os.isHarmony) {
     const qrcode = document.getElementById("qrcode");
     Qrcode.toDataURL(location.href, { errorCorrectionLevel: "L" })
       .then((url) => qrcode.setAttribute("src", url))
@@ -63,7 +67,7 @@ window.onload = function () {
   }
 
   // 微信弹窗
-  if ((os.isAndroid && os.isWechat) || (os.isIOS && os.isDingTalk)) {
+  if ((os.isAndroid && os.isWechat) || (os.isIOS && os.isDingTalk) || (os.isHarmony && os.isWechat)) {
     const tip = document.getElementById("wechat-tips");
     return tip.show();
   }
