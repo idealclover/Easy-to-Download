@@ -132,6 +132,7 @@ p {
 .large-image {
   margin-top: 30px;
   width: 90%;
+  height: auto;
 }
 
 .page-icon {
